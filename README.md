@@ -10,7 +10,7 @@ Turma: Análise De Dados T1
 ## Objetivo
 Este Mini_Projeto realiza uma uma Análise Exploratória de Dados (AED) utilizando Python e Pandas.
 
-###Lista de campos existentes na base de dados 
+### Lista de campos existentes na base de dados 
 
 1. DATA: Data da compra; 
 2. CO_ID: Identificação do número de compra (número da nota fiscal); 
