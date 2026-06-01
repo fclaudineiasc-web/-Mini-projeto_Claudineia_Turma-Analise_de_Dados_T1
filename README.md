@@ -10,10 +10,8 @@ Turma: Análise De Dados T1
 ## Objetivo
 Este Mini_Projeto realiza uma uma Análise Exploratória de Dados (AED) utilizando Python e Pandas.
 
-I.1.2 Lista de campos existentes na base de dados 
-A Figura I.1 mostra um resumo da base de dados Varejo, com a descrição de cada campo a 
-seguir. 
-Figura I.1: Visão compacta da base de dados Varejo.csv | Fonte: Autor, adaptado da base de dados 
+###Lista de campos existentes na base de dados 
+
 1. DATA: Data da compra; 
 2. CO_ID: Identificação do número de compra (número da nota fiscal); 
 3. CL_ID: Identificação do cliente (número do cliente); 
