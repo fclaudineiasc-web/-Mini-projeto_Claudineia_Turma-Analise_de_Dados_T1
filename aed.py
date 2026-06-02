@@ -289,10 +289,11 @@ print("""
    em um novo arquivo CSV.
 """)
 
-# ---------------------------------------------------------
-# 9. EXPORTAR BASE LIMPA
-# ---------------------------------------------------------
 
 print("\nPROJETO FINALIZADO!")
+<<<<<<< HEAD
+=======
+
+>>>>>>> baedf64092dea8af5c2caa7dbee3ffaac7cce77c
 
 
