@@ -291,9 +291,6 @@ print("""
 
 
 print("\nPROJETO FINALIZADO!")
-<<<<<<< HEAD
-=======
 
->>>>>>> baedf64092dea8af5c2caa7dbee3ffaac7cce77c
 
 
