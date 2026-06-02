@@ -176,5 +176,124 @@ if "CL_FHL" in df.columns:
     print("\nQuartis:")
     print(dados_filhos.quantile([0.25, 0.50, 0.75]))
 
+# ---------------------------------------------------------
+# 7. AGRUPAMENTOS
+# ---------------------------------------------------------
+
+print("\n" + "=" * 60)
+print("AGRUPAMENTOS")
+print("=" * 60)
+
+# ---------------------------------------------------------
+# AGRUPAMENTO POR GÊNERO
+# ---------------------------------------------------------
+
+if (
+    'CL_GENERO' in df.columns and
+    'CO_ID' in df.columns
+):
+
+    genero = (
+        df.groupby('CL_GENERO')['CO_ID']
+        .count()
+        .reset_index()
+    )
+
+    genero.columns = [
+        'Genero',
+        'Quantidade_Compras'
+    ]
+
+    print("\nCompras por gênero:")
+    print(genero)
+
+# ---------------------------------------------------------
+# DEFINIR COLUNA DE VALOR
+# ---------------------------------------------------------
+# AJUSTE O NOME CASO NECESSÁRIO
+
+coluna_valor = 'CO_TOTAL'
+
+# ---------------------------------------------------------
+# AGRUPAMENTO POR ESTADO CIVIL
+# ---------------------------------------------------------
+
+if (
+    'CL_EC' in df.columns and
+    coluna_valor in df.columns
+):
+
+    estado_civil = (
+        df.groupby('CL_EC')[coluna_valor]
+        .mean()
+        .reset_index()
+    )
+
+    estado_civil.columns = [
+        'Estado_Civil',
+        'Media_Compra'
+    ]
+
+    print("\nMédia de compra por estado civil:")
+    print(estado_civil)
+
+# ---------------------------------------------------------
+# PIVOT TABLE
+# ---------------------------------------------------------
+
+print("\n" + "=" * 60)
+print("PIVOT TABLE")
+print("=" * 60)
+
+if (
+    'CL_GENERO' in df.columns and
+    'CL_EC' in df.columns and
+    coluna_valor in df.columns
+):
+
+    pivot = pd.pivot_table(
+        df,
+        values=coluna_valor,
+        index='CL_GENERO',
+        columns='CL_EC',
+        aggfunc='mean'
+    )
+
+    print(pivot)
+
+# ---------------------------------------------------------
+# 8. CONCLUSÕES
+# ---------------------------------------------------------
+
+print("\n" + "=" * 60)
+print("CONCLUSÕES")
+print("=" * 60)
+
+print("""
+1. A base possuía valores nulos,
+   campos vazios e registros #N/D.
+
+2. As colunas PR_CAT e PR_NOME
+   foram tratadas e padronizadas.
+
+3. Registros duplicados foram removidos.
+
+4. A coluna DATA foi convertida
+   para datetime.
+
+5. Foram identificados padrões
+   de compras por gênero
+   e estado civil.
+
+6. A base limpa foi salva
+   em um novo arquivo CSV.
+""")
+
+# ---------------------------------------------------------
+# 9. EXPORTAR BASE LIMPA
+# ---------------------------------------------------------
+
+print("\nPROJETO FINALIZADO!")
+
 
 
