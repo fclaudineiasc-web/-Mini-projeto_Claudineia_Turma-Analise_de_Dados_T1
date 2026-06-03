@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Mini-projeto_Claudineia_Turma-Analise_de_Dados_T1
 ## Mini-Projeto Avaliativo - Módulo 1 - Semana 07
 
